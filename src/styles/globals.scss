@@ -1,0 +1,164 @@
+@import "./breakpoints";
+
+:root {
+  --success: #2e7d32;
+  --error: #d21b1b;
+  --alert: #e9ba15;
+  --scroll: #797775;
+  --inactive: #9f9f9f;
+
+  // General colors
+  --white: #ffffff;
+  --black: #000000;
+
+  --blue: #3294f8;
+  --dark-blue: #2874a6;
+
+  --green: #2ecc71;
+  --dark-green: #239b56;
+
+  --yellow: #dbac2c;
+  --yellow-dark: #c47f17;
+
+  --purple: #8047f8;
+  --purple-dark: #4b2995;
+
+  // Grayscale
+  --gray-100: #f0f0f0; /* 100: Cinza claro */
+  --gray-200: #d9d9d9; /* 200 */
+  --gray-300: #bfbfbf; /* 300 */
+  --gray-400: #a6a6a6; /* 400 */
+  --gray-500: #8c8c8c; /* 500 */
+  --gray-600: #737373; /* 600 */
+  --gray-700: #595959; /* 700 */
+  --gray-800: #404040; /* 800 */
+  --gray-900: #262626; /* 900: Cinza escuro */
+}
+
+:focus {
+  outline: none;
+}
+
+$breakpoint-xs: 375px; // Extra small, para smartphones
+$breakpoint-sm: 480px; // Small, para smartphones grandes
+$breakpoint-md: 768px; // Medium, para tablets
+$breakpoint-lg: 1024px; // Large, para desktops
+$breakpoint-xl: 1200px; // Extra large, para monitors grandes
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--white);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  color: var(--black);
+  background-color: transparent !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button {
+  font:
+    400 1rem Roboto,
+    sans-serif;
+}
+
+a {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Styles for mobiles
+@include media-xs {
+  h1 {
+    font-size: 32px;
+    line-height: 38.73px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 29.05px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 21.78px;
+  }
+}
+
+// Styles for desktops
+@include media-lg {
+  h1 {
+    font-size: 48px;
+    line-height: 58.09px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 21.78px;
+  }
+}
+
+// Scrollbar SCSS
+html {
+  scroll-behavior: smooth;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c2c2c2 rgb(255, 255, 255);
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--scroll);
+}
